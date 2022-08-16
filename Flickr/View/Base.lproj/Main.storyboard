@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flickr View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FlickrViewController" customModule="Flickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZB-Ap-DJy">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="263-9o-SSd">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="f9r-4w-wNZ" customClass="MyCollectionViewCell" customModule="Flickr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AWo-Aj-1pR">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-thumbnail-image-placeholder-forums-blogs-websites-148010362" translatesAutoresizingMaskIntoConstraints="NO" id="a7z-hu-iE2">
+                                                    <rect key="frame" x="3" y="3" width="800" height="800"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a7z-hu-iE2" firstAttribute="top" secondItem="AWo-Aj-1pR" secondAttribute="top" constant="3" id="VYf-4g-tr1"/>
+                                                <constraint firstItem="a7z-hu-iE2" firstAttribute="leading" secondItem="AWo-Aj-1pR" secondAttribute="leading" constant="3" id="rYM-f8-suF"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="150" height="150"/>
+                                        <connections>
+                                            <outlet property="dispalyedImage" destination="a7z-hu-iE2" id="Gak-bU-TBu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dJl-wS-hXI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Abe-Ga-XBs"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gUA-OA-35I">
+                                <rect key="frame" x="0.0" y="74" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flickr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTo-fr-P7q">
+                                <rect key="frame" x="178" y="44" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcv-av-hF1">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iY4-hl-2Vf">
+                                        <rect key="frame" x="72.5" y="345.5" width="269" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="QOU-wC-vRJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstItem="iY4-hl-2Vf" firstAttribute="centerY" secondItem="lcv-av-hF1" secondAttribute="centerY" id="tYD-hn-j4r"/>
+                                    <constraint firstItem="iY4-hl-2Vf" firstAttribute="centerX" secondItem="lcv-av-hF1" secondAttribute="centerX" id="z2g-6P-Ecv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gUA-OA-35I" secondAttribute="trailing" id="4TB-ga-bh3"/>
+                            <constraint firstItem="gUA-OA-35I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7bZ-IA-8wY"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="top" secondItem="gUA-OA-35I" secondAttribute="bottom" constant="1" id="AH1-UN-rBI"/>
+                            <constraint firstItem="lcv-av-hF1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="C3n-Ux-Bjk"/>
+                            <constraint firstItem="gUA-OA-35I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="EJi-Sz-gdC"/>
+                            <constraint firstItem="pTo-fr-P7q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ELz-BC-QON"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JT9-Ar-qKi"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bdx-hE-rDo"/>
+                            <constraint firstItem="lcv-av-hF1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gd7-dz-CQ6"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hsU-7m-r4F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NZB-Ap-DJy" secondAttribute="bottom" id="ien-PN-8Ih"/>
+                            <constraint firstItem="pTo-fr-P7q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kYh-uZ-2l9"/>
+                            <constraint firstItem="lcv-av-hF1" firstAttribute="top" secondItem="gUA-OA-35I" secondAttribute="bottom" constant="1" id="m4y-2T-gaO"/>
+                            <constraint firstItem="lcv-av-hF1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pSV-lU-T9l"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wIm-WM-03X"/>
+                            <constraint firstItem="NZB-Ap-DJy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wYU-Qa-TUz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="displayCollection" destination="NZB-Ap-DJy" id="KIf-4c-IXq"/>
+                        <outlet property="displayView" destination="lcv-av-hF1" id="xqG-Dk-uhV"/>
+                        <outlet property="searchBar" destination="gUA-OA-35I" id="8BP-U3-0IN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1327.536231884058" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="no-thumbnail-image-placeholder-forums-blogs-websites-148010362" width="800" height="800"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
